@@ -39,14 +39,11 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.comp.carriers.view.Main",
+			"viewName": "sap.training.comp.carriers.view.App",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -80,6 +77,46 @@
 			"css": [{
 				"uri": "css/style.css"
 			}]
+		},
+		"routing": {
+			"config": {
+				"viewPath": "sap.training.comp.carriers.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"clearControlAggregation": true,
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [{
+				"name": "main",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["main"]
+			}, {
+				"name": "airline",
+				"pattern": "airline/{Carrid}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Airline"]
+			}],
+			"targets": {
+				"main": {
+					"viewType": "XML",
+					"transition": "slide",
+					"viewName": "Main"
+				},
+				"Airline": {
+					"viewType": "XML",
+					"viewName": "Airline"
+				},
+				"notFound": {
+					"viewType": "XML",
+					"transition": "slide",
+					"viewName": "NotFound"
+				}
+			}
 		}
 	}
 }

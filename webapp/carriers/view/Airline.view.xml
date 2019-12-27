@@ -1,0 +1,42 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.training.comp.carriers.controller.Airline"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page
+		title="Airline: {Carrname}"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+		<content>
+			<Toolbar>
+				<Button text="Press me!" press="onButtonPressed"/>
+			</Toolbar>
+			<Table items="{to_Flight}">
+				<columns>
+					<Column>
+						<Text text="Route Number"/>
+					</Column>
+					<Column>
+						<Text text="Date"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{Connid}"/>
+							<Text text="{path: 'Fldate',
+										 type: 'sap.ui.model.type.Date',
+										 formatOptions: {
+											pattern: 'dd.MM.yy'
+										 } }"/> 
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
+
+
+
+
+
+
+

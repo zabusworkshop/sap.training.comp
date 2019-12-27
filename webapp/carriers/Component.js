@@ -21,6 +21,23 @@ sap.ui.define([
 
 			// set fragment controller
 			this.carriersDialog = new CarriersDialog();
+			
+			// init router
+			this.getRouter().initialize();
 		}
 	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
